@@ -1,0 +1,33 @@
+var shoes = [
+  { name: "Nike", price: 200 },
+  { name: "Red Wings", price: 250 },
+  { name: "Vans", price: 50 },
+  { name: "Converse", price: 60 },
+  { name: "Reebok", price: 130 },
+  { name: "New Balance", price: 75 },
+  { name: "Adidas", price: 95 },
+  { name: "Keds", price: 40 },
+  { name: "Crocs", price: 35 },
+];
+
+var brands = shoes.reduce(function (accumulator, shoe) {
+  console.log(accumulator);
+  accumulator.push(shoe.name);
+
+  return accumulator;
+}, []);
+
+Okay, so this one is sort of confusing. 
+This isn't numbers and instead of using sum in our iterator function, 
+we called it accumulator. This parameter is commonly called previous as well 
+because it always refers to the accumulative value of our array to this point. 
+Essentially, we can break our reduce function up into these steps:
+
+Our initial value is set to an empty array - []. 
+After-all, we want to return an array of brands.
+The reduce function starts iterating through our shoes array.
+On the first iteration, accumulator refers to the empty array.
+Each time we iterate through the array, we specifically push that shoe object's name 
+into our accumulator array.
+At the end of the iteration, we have to return something back to the brands variable. 
+We return accumulator. Huzzah!
